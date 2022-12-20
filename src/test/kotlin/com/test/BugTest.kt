@@ -13,7 +13,7 @@ class BugTest {
 
     @Test
     fun test() {
-        val id = repository.save(Parent("a", "b", mutableMapOf("child" to Child("nowhere")))).id
+        val id = repository.save(Parent("a", "b", mapOf("child" to Child("nowhere")))).id
         val record = repository.findById(id).get()
         assertEquals(Child::class, record.children["child"]!!::class)
     }
